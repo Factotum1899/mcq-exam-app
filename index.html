@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MCQ Exam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ================= TOP BAR ================= -->
+  <div class="top-bar">
+    <div class="brand">General Hygiene</div>
+
+    <div style="display:flex; gap:10px; align-items:center;">
+      <!-- Mobile tiles toggle -->
+      <button id="menuBtn" class="menu-btn" onclick="toggleTiles()">☰</button>
+
+      <button onclick="toggleTheme()">🌗</button>
+      <button id="submitBtn" onclick="finishExam()">Submit</button>
+    </div>
+  </div>
+
+  <!-- ================= MAIN LAYOUT ================= -->
+  <div class="exam-layout">
+
+    <!-- ===== LEFT PANEL ===== -->
+    <div class="question-panel">
+      <h3 id="section"></h3>
+      <h2 id="question"></h2>
+
+      <div id="options"></div>
+      <div id="feedback"></div>
+
+      <!-- 🎬 MEME BOX (TENOR NEEDS A DIV, NOT IFRAME) -->
+      <div id="memeBox" class="meme-box" style="display:none;"></div>
+
+      <!-- RESULT PANEL -->
+      <div id="resultPanel" style="display:none;"></div>
+
+      <!-- NAVIGATION BUTTONS -->
+      <div class="nav-buttons" id="navButtons">
+        <button onclick="prevQuestion()">Prev</button>
+        <button onclick="skipQuestion()">Skip</button>
+        <button onclick="nextQuestion()">Next</button>
+      </div>
+    </div>
+
+    <!-- ===== RIGHT PANEL (TILES) ===== -->
+    <div class="tiles-panel" id="tilesPanel">
+
+      <!-- Section Switch -->
+      <div class="section-switch">
+        <button onclick="goToSection(1)">Sec 1</button>
+        <button onclick="goToSection(2)">Sec 2</button>
+        <button onclick="goToSection(3)">Sec 3</button>
+        <button onclick="goToSection(4)">Sec 4</button>
+      </div>
+
+      <!-- Tile Legend -->
+      <div class="legend">
+        <span class="lg answered"></span> Answered
+        <span class="lg skipped"></span> Unanswered
+        <span class="lg current"></span> Current
+      </div>
+
+      <h4 id="tileHeading"></h4>
+      <div id="tiles"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="questions.js"></script>
+<script src="script.js"></script>
+
+<!-- ✅ TENOR SCRIPT (MUST BE LOADED ONCE) -->
+<script async src="https://tenor.com/embed.js"></script>
+
+</body>
+</html>

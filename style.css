@@ -1,0 +1,465 @@
+:root {
+  --bg-color: #f4f6f8;
+  --card-bg: #ffffff;
+  --text-color: #000000;
+  --option-bg: #fafafa;
+  --option-border: #ccc;
+  --option-hover: #f1f3f5;
+  --selected-bg: #d0ebff;
+  --selected-border: #339af0;
+  --button-bg: #339af0;
+  --button-text: #ffffff;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --text-color: #ffffff;
+  --option-bg: #2a2a2a;
+  --option-border: #444;
+  --option-hover: #333;
+  --selected-bg: #1c7ed6;
+  --selected-border: #4dabf7;
+  --button-bg: #4dabf7;
+  --button-text: #000000;
+}
+
+/* =====================
+   BASE
+===================== */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* =====================
+   TOP BAR & LAYOUT
+===================== */
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.exam-layout {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 20px;
+}
+
+.question-panel {
+  padding-right: 10px;
+}
+
+.tiles-panel {
+  border-left: 1px solid var(--option-border);
+  padding-left: 15px;
+}
+
+/* =====================
+   OPTIONS
+===================== */
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid var(--option-border);
+  border-radius: 6px;
+
+  cursor: pointer;
+  background-color: var(--option-bg);
+
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.option:hover {
+  background-color: var(--option-hover);
+}
+
+.option:active {
+  transform: scale(0.98);
+}
+
+.option.selected {
+  background-color: var(--selected-bg);
+  border: 2px solid var(--selected-border);
+  cursor: default;
+}
+
+/* 🔒 Prevent selected option from greying on hover */
+.option.selected:hover {
+  background-color: var(--selected-bg);
+}
+
+.opt-label {
+  font-weight: bold;
+}
+
+/* =====================
+   BUTTONS
+===================== */
+
+button {
+  padding: 10px 16px;
+  margin: 5px 5px 5px 0;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* =====================
+   NAV BUTTONS
+===================== */
+
+.nav-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+/* =====================
+   TILES
+===================== */
+
+#tiles {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+#tiles button {
+  padding: 8px;
+  border-radius: 6px;
+  background-color: var(--option-bg);
+  color: var(--text-color);
+}
+
+#tiles button.answered {
+  background-color: #b2f2bb;
+}
+
+#tiles button.current {
+  border: 2px solid var(--selected-border);
+}
+
+/* =====================
+   SECTION SWITCH
+===================== */
+
+.section-switch {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.section-switch button {
+  flex: 1;
+  padding: 6px;
+  font-size: 14px;
+}
+
+/* =====================
+   LEGEND
+===================== */
+
+.legend {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.lg {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+.lg.answered {
+  background-color: #b2f2bb;
+}
+
+.lg.skipped {
+  background-color: #e9ecef;
+}
+
+.lg.current {
+  border: 2px solid var(--selected-border);
+}
+
+/* =====================
+   MOBILE MENU
+===================== */
+
+.menu-btn {
+  font-size: 20px;
+  padding: 6px 10px;
+  display: none;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+@media (max-width: 900px) {
+  .exam-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .tiles-panel {
+    border-left: none;
+    padding-left: 0;
+    margin-top: 20px;
+    display: none;
+  }
+
+  .menu-btn {
+    display: inline-block;
+  }
+}
+/* ================================
+   FINAL UI POLISH
+================================ */
+
+/* Smooth global transitions */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Container refinement */
+.container {
+  max-width: 1100px;
+  padding: 28px;
+}
+
+/* Top bar polish */
+.top-bar {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--option-border);
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.4px;
+}
+
+/* Question text */
+#question {
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 18px;
+}
+
+/* Option cards – exam feel */
+.option {
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+/* Hover ONLY if not selected */
+.option:not(.selected):hover {
+  background-color: var(--option-hover);
+  transform: translateY(-1px);
+}
+
+/* Selected option – locked feel */
+.option.selected {
+  background-color: var(--selected-bg);
+  border: 2px solid var(--selected-border);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.05);
+}
+
+/* Prevent hover override on selected */
+.option.selected:hover {
+  background-color: var(--selected-bg);
+  transform: none;
+}
+
+/* Option label A/B/C */
+.opt-label {
+  min-width: 22px;
+  font-weight: bold;
+}
+
+/* Feedback styling */
+#feedback {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Navigation buttons */
+.nav-buttons button {
+  min-width: 90px;
+  font-weight: 600;
+}
+
+/* Tiles panel */
+.tiles-panel {
+  padding-left: 20px;
+}
+
+/* Section title */
+#tileHeading {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Tile buttons */
+#tiles button {
+  font-size: 13px;
+  padding: 8px 0;
+}
+
+/* Answered tile */
+#tiles button.answered {
+  background-color: #b2f2bb;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Current tile */
+#tiles button.current {
+  outline: 2px solid var(--selected-border);
+}
+
+/* Legend cleanup */
+.legend {
+  opacity: 0.85;
+}
+
+/* Result panel */
+#resultPanel {
+  margin-top: 25px;
+}
+
+#resultPanel h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* Reattempt button emphasis */
+#resultPanel button {
+  margin-top: 15px;
+  font-size: 15px;
+  padding: 12px 20px;
+}
+
+/* ================================
+   MOBILE POLISH
+================================ */
+
+@media (max-width: 900px) {
+
+  .container {
+    margin: 10px;
+    padding: 18px;
+  }
+
+  #question {
+    font-size: 18px;
+  }
+
+  .option {
+    padding: 14px;
+  }
+
+  .nav-buttons {
+    justify-content: space-between;
+  }
+
+  .nav-buttons button {
+    flex: 1;
+  }
+
+  /* Tiles slide-in feel */
+  #tilesPanel.open {
+    display: block;
+    animation: slideUp 0.25s ease;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+/* Meme box */
+.meme-box {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.meme-box img {
+  max-width: 100%;
+  max-height: 180px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+/* DEBUG: force meme visibility */
+#memeBox {
+  display: block !important;
+  min-height: 200px;
+  background: rgba(255, 0, 0, 0.15); /* TEMP */
+  border: 2px dashed red;
+  z-index: 9999;
+}
+.meme-box {
+  margin-top: 12px;
+  text-align: center;
+}
+
+.meme-box iframe {
+  width: 100%;
+  max-width: 420px;
+  height: 220px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.meme-box {
+  min-height: 160px;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.meme-box img {
+  max-width: 100%;
+  max-height: 180px;
+  border-radius: 10px;
+}
+
