@@ -132,11 +132,11 @@ const JSON_DATA = [
   {
     "S.no": 14,
     "Question": "What is the best pH of water for drinking purposes?",
-    "A": 6.9,
-    "B": 4.7,
-    "C": 5.8,
-    "D": 8.9,
-    "E": 9.5,
+    "A": "6.9",
+    "B": "4.7",
+    "C": "5.8",
+    "D": "8.9",
+    "E": "9.5",
     "Section": 1
   },
   {
@@ -232,11 +232,11 @@ const JSON_DATA = [
   {
     "S.no": 24,
     "Question": "What is the minimum amount of standard solutions required to measure pH?",
-    "A": 2,
-    "B": 1,
-    "C": 3,
-    "D": 4,
-    "E": 5,
+    "A": "2",
+    "B": "1",
+    "C": "3",
+    "D": "4",
+    "E": "5",
     "Section": 1
   },
   {
@@ -1232,11 +1232,11 @@ const JSON_DATA = [
   {
     "S.no": 124,
     "Question": "What is the minimum amount of standard solutions required to measure the electrical conductivity of water?",
-    "A": 1,
-    "B": 5,
-    "C": 4,
-    "D": 2,
-    "E": 3,
+    "A": "1",
+    "B": "5",
+    "C": "4",
+    "D": "2",
+    "E": "3",
     "Section": 3
   },
   {
@@ -1702,11 +1702,11 @@ const JSON_DATA = [
   {
     "S.no": 171,
     "Question": "According to the guidelines, how many entrances should an infectious disease clinic have?",
-    "A": 2,
-    "B": 1,
-    "C": 3,
-    "D": 4,
-    "E": 5,
+    "A": "2",
+    "B": "1",
+    "C": "3",
+    "D": "4",
+    "E": "5",
     "Section": 4
   },
   {
@@ -1764,7 +1764,7 @@ const JSON_DATA = [
     "Question": "Which vitamins are water soluble vitamins",
     "A": "B",
     "B": "A",
-    "C": "?",
+    "C": "E",
     "D": "D",
     "E": "Tocopherol",
     "Section": 4
@@ -1884,18 +1884,18 @@ const JSON_DATA = [
     "Question": "What kind of food poisoning, if the clinic notes: temperature 38-40 �, vomiting, abdominal pain, frequent and copious stools, fetid with mucus and blood, tenesmus, pallor of the skin",
     "A": "Toxicinfection caused by salmonella",
     "B": "Escherichia coli poisoning",
-    "C": "?oisoning with pale toadstool",
-    "D": "?oisoning by belladonna",
-    "E": "?otulism",
+    "C": "Poisoning with pale toadstool",
+    "D": "Poisoning by belladonna",
+    "E": "Botulism",
     "Section": 4
   },
   {
     "S.no": 190,
     "Question": "The final diagnosis of \"food poisoning\" is established after:",
-    "A": "?btaining data from laboratory studies",
+    "A": "Obtaining data from laboratory studies",
     "B": "",
-    "C": "?ollecting a food history and identifying a \"suspect\" product",
-    "D": "?nalysis of the epidemiological situation",
+    "C": "Collecting a food history and identifying a \"suspect\" product",
+    "D": "Analysis of the epidemiological situation",
     "E": "Sanitary and epidemiological examination of the food facility",
     "Section": 4
   },
